@@ -3,7 +3,8 @@ class ClickbaitValidator < ActiveModel::Validator
         click=["Won't Believe", "Secret", "Top ","Guess"]
         title=post.title
         if click.none?{|word|word.match title}
-        errors.add(:title, "must be clickbait")
+        return true
+        else false
         end
     end
   end
